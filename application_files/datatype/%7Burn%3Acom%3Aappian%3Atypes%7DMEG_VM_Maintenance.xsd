@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:com:appian:types" targetNamespace="urn:com:appian:types">
+      
+    <xsd:include schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%7DMEG_VM_Vehicle.xsd"/>
+      
+    <xsd:complexType name="MEG_VM_Maintenance">
+            
+        <xsd:annotation>
+                  
+            <xsd:appinfo source="http://www.appian.com/ae/types/2009">
+                        
+                <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
+                              
+                    <ns2:versionUuid>0001e388-ee28-8000-f92f-7f0000014e7a</ns2:versionUuid>
+                              
+                    <ns2:history>
+                                    
+                        <ns2:historyInfo versionUuid="0001e388-ee28-8000-f92f-7f0000014e7a"/>
+                                  
+                    </ns2:history>
+                            
+                </ns2:Metadata>
+                      
+            </xsd:appinfo>
+                  
+            <xsd:documentation>
+                <![CDATA[Grouping of related data points in regards to a maintenance request]]>
+            </xsd:documentation>
+                
+        </xsd:annotation>
+            
+        <xsd:sequence>
+                  
+            <xsd:element name="id" nillable="true" type="xsd:int">
+                        
+                <xsd:annotation>
+                              
+                    <xsd:appinfo source="appian.jpa">@Id @GeneratedValue</xsd:appinfo>
+                            
+                </xsd:annotation>
+                      
+            </xsd:element>
+                  
+            <xsd:element name="vehicle" nillable="true" type="tns:MEG_VM_Vehicle">
+                        
+                <xsd:annotation>
+                              
+                    <xsd:appinfo source="appian.jpa">@ManyToOne(cascade=CascadeType.ALL)</xsd:appinfo>
+                            
+                </xsd:annotation>
+                      
+            </xsd:element>
+                  
+            <xsd:element name="mechanic" nillable="true" type="xsd:string">
+                        
+                <xsd:annotation>
+                              
+                    <xsd:appinfo source="appian.jpa">@Column(length=255)</xsd:appinfo>
+                            
+                </xsd:annotation>
+                      
+            </xsd:element>
+                  
+            <xsd:element name="issueDescription" nillable="true" type="xsd:string">
+                        
+                <xsd:annotation>
+                              
+                    <xsd:appinfo source="appian.jpa">@Column(length=500)</xsd:appinfo>
+                            
+                </xsd:annotation>
+                      
+            </xsd:element>
+                  
+            <xsd:element name="isScheduled" nillable="true" type="xsd:boolean"/>
+                  
+            <xsd:element name="partEstimate" nillable="true" type="xsd:double"/>
+                  
+            <xsd:element name="laborEstimate" nillable="true" type="xsd:double"/>
+                  
+            <xsd:element name="partActual" nillable="true" type="xsd:double"/>
+                  
+            <xsd:element name="laborActual" nillable="true" type="xsd:double"/>
+                  
+            <xsd:element name="totalEstimate" nillable="true" type="xsd:double"/>
+                  
+            <xsd:element name="totalActual" nillable="true" type="xsd:double"/>
+                  
+            <xsd:element name="supervisorDecision" nillable="true" type="xsd:boolean"/>
+                  
+            <xsd:element name="supervisorComments" nillable="true" type="xsd:string">
+                        
+                <xsd:annotation>
+                              
+                    <xsd:appinfo source="appian.jpa">@Column(length=500)</xsd:appinfo>
+                            
+                </xsd:annotation>
+                      
+            </xsd:element>
+                  
+            <xsd:element name="mechanicComments" nillable="true" type="xsd:string">
+                        
+                <xsd:annotation>
+                              
+                    <xsd:appinfo source="appian.jpa">@Column(length=500)</xsd:appinfo>
+                            
+                </xsd:annotation>
+                      
+            </xsd:element>
+                  
+            <xsd:element name="repairStatus" nillable="true" type="xsd:string">
+                        
+                <xsd:annotation>
+                              
+                    <xsd:appinfo source="appian.jpa">@Column(length=255)</xsd:appinfo>
+                            
+                </xsd:annotation>
+                      
+            </xsd:element>
+                
+        </xsd:sequence>
+          
+    </xsd:complexType>
+    
+</xsd:schema><!--updated on 2020-03-03T11:05:31.547-->

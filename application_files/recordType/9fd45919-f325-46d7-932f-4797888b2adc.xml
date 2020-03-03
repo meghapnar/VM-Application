@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      
+    <versionUuid>91d991fd-0935-44ef-913a-9b5bd43d73ae</versionUuid>
+      
+    <recordType a:uuid="9fd45919-f325-46d7-932f-4797888b2adc" name="MEG VM Vehicle">
+            
+        <a:pluralName>MEG VM Vehicles</a:pluralName>
+            
+        <a:description>Entity-Backed record of the vehicle fleet</a:description>
+            
+        <a:urlStub>31Qh6A</a:urlStub>
+            
+        <a:source a:uuid="016d9e89-888c-4a2f-a8e9-691f802f43b8@_a-0000e37d-16a2-8000-9ba2-011c48011c48_32328" xsi:type="a:DataStoreEntity"/>
+            
+        <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridLayoutColumns"(
+  columns: {
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Make",
+      field: "make",
+      component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: #"SYSTEM_SYSRULES_recordLink"(
+          label: rf!make,
+          recordType: rp!type,
+          identifier: rp!id
+        )
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Model",
+      field: "model",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayValue: rf!model,
+        align: null
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Description",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: rf!description
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Mileage",
+      field: "mileage",
+      component: #"SYSTEM_SYSRULES_recordGrid_integerField"(
+        displayValue: rf!mileage,
+        align: "RIGHT"
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Image",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_imageField_v1"(
+        images: if(
+          isnull(rf!imageId),
+          #"SYSTEM_SYSRULES_documentImage"(6726),
+          #"SYSTEM_SYSRULES_documentImage"(rf!imageId)
+        ),
+        size: "SMALL",
+        isThumbnail: false,
+        style: "STANDARD"
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Status",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_imageField_v1"(
+        images: #"SYSTEM_SYSRULES_documentImage"(#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_30077"(rf!status)),
+        size: "SMALL",
+        isThumbnail: false,
+        style: "STANDARD"
+      )
+    )
+  },
+  pageSize: 50,
+  defaultSort: #"SYSTEM_SYSRULES_sortInfo"(
+    field: "make",
+    ascending: fn!true()
+  ),
+  shadeAlternateRows: true,
+  borderstyle: "STANDARD"
+)</a:listViewTemplateExpr>
+            
+        <a:fieldCfg name="Status">
+                  
+            <a:description/>
+                  
+            <a:sourceRef>status</a:sourceRef>
+                  
+            <a:isSortable>false</a:isSortable>
+                  
+            <a:isSearchable>false</a:isSearchable>
+                  
+            <a:isFacet>true</a:isFacet>
+                  
+            <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+                  
+            <a:isExclusiveFacet>true</a:isExclusiveFacet>
+                  
+            <a:facetLabelExpr>"Status"</a:facetLabelExpr>
+                  
+            <a:facetOption>
+                        
+                <a:labelExpr>"Active"</a:labelExpr>
+                        
+                <a:facetOperator>IN</a:facetOperator>
+                        
+                <a:lowerLimitExpr/>
+                        
+                <a:upperLimitExpr/>
+                        
+                <a:values>true</a:values>
+                      
+            </a:facetOption>
+                  
+            <a:facetOption>
+                        
+                <a:labelExpr>"Inactive"</a:labelExpr>
+                        
+                <a:facetOperator>IN</a:facetOperator>
+                        
+                <a:lowerLimitExpr/>
+                        
+                <a:upperLimitExpr/>
+                        
+                <a:values>false</a:values>
+                      
+            </a:facetOption>
+                  
+            <a:sortOrderIndex>0</a:sortOrderIndex>
+                  
+            <a:facetOrderIndex>0</a:facetOrderIndex>
+                  
+            <a:visibilityExpr/>
+                  
+            <a:defaultOptionExpr/>
+                  
+            <a:allowMultipleSelections>true</a:allowMultipleSelections>
+                
+        </a:fieldCfg>
+            
+        <a:fieldCfg name="Category">
+                  
+            <a:isSortable>false</a:isSortable>
+                  
+            <a:isSearchable>false</a:isSearchable>
+                  
+            <a:isFacet>true</a:isFacet>
+                  
+            <a:facetType>EXPRESSION</a:facetType>
+                  
+            <a:isExclusiveFacet>true</a:isExclusiveFacet>
+                  
+            <a:facetExpr>#"SYSTEM_SYSRULES_recordFilterList"(
+  name: "Category",
+  options: #"SYSTEM_SYSRULES_forEach"(
+    items: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_29219",
+    expression: #"SYSTEM_SYSRULES_recordFilterListOption"(
+      id: fv!index,
+      name: fv!item,
+      filter: #"SYSTEM_SYSRULES_queryFilter"(
+        field: "category",
+        operator: "=",
+        value: fv!item
+      )
+    )
+  )
+)</a:facetExpr>
+                  
+            <a:sortOrderIndex>1</a:sortOrderIndex>
+                  
+            <a:facetOrderIndex>1</a:facetOrderIndex>
+                  
+            <a:visibilityExpr/>
+                  
+            <a:defaultOptionExpr/>
+                  
+            <a:allowMultipleSelections>true</a:allowMultipleSelections>
+                
+        </a:fieldCfg>
+            
+        <a:detailViewCfg>
+                  
+            <a:nameExpr>="Summary"</a:nameExpr>
+                  
+            <a:uiExpr>#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_34105"(#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_33622"(rf!id))</a:uiExpr>
+                  
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+                  
+            <a:urlStub>summary</a:urlStub>
+                  
+            <a:headerExpr/>
+                  
+            <a:relatedActionCfg>721848a3-2c31-4ce8-9b4a-58880164c821</a:relatedActionCfg>
+                
+        </a:detailViewCfg>
+            
+        <a:relatedActionCfg>
+                  
+            <a:target a:uuid="0002e387-b108-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+                  
+            <a:contextExpr>{
+  vehicleIdentification: rf!id
+}</a:contextExpr>
+                  
+            <a:visibilityExpr>isusermemberofgroup(loggedInUser(),#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_34558")
+</a:visibilityExpr>
+                  
+            <a:iconId>f044</a:iconId>
+                  
+            <a:refId>721848a3-2c31-4ce8-9b4a-58880164c821</a:refId>
+                  
+            <a:titleExpr>"Update " &amp; rf!make &amp; " " &amp; rf!model</a:titleExpr>
+                  
+            <a:staticDescriptionString/>
+                
+        </a:relatedActionCfg>
+            
+        <a:isSystem>false</a:isSystem>
+            
+        <a:dataSrcExpr/>
+            
+        <a:facetsListExpr/>
+            
+        <a:titleExpr>#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_30251"(#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_33622"(rf!id))</a:titleExpr>
+            
+        <a:defaultFiltersExpr/>
+            
+        <a:layoutType>GRID</a:layoutType>
+            
+        <a:security>16383</a:security>
+            
+        <a:hideLatestNews>false</a:hideLatestNews>
+            
+        <a:isExportable>false</a:isExportable>
+            
+        <a:listViewSrcExpr/>
+            
+        <a:recordViewSrcExpr/>
+            
+        <a:iconId/>
+            
+        <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+          
+    </recordType>
+      
+    <roleMap>
+            
+        <role name="record_type_administrator">
+                  
+            <users/>
+                  
+            <groups>
+                        
+                <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_125</groupUuid>
+                      
+            </groups>
+                
+        </role>
+            
+        <role name="record_type_viewer">
+                  
+            <users/>
+                  
+            <groups>
+                        
+                <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_74</groupUuid>
+                      
+            </groups>
+                
+        </role>
+          
+    </roleMap>
+      
+    <history>
+            
+        <historyInfo versionUuid="91d991fd-0935-44ef-913a-9b5bd43d73ae"/>
+          
+    </history>
+      
+    <migrationVersion>1</migrationVersion>
+    
+</recordTypeHaul><!--updated on 2020-03-03T11:05:32.028-->

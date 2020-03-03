@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      
+    <versionUuid>6c5b8928-c927-4882-8bba-7c77f6189c19</versionUuid>
+      
+    <recordType a:uuid="816a7a04-a116-41de-bf48-5890734d7f0e" name="MEG VM Maintenance">
+            
+        <a:pluralName>MEG VM Maintenances</a:pluralName>
+            
+        <a:description>Process backed record of all maintenance requests</a:description>
+            
+        <a:urlStub>w6PRvg</a:urlStub>
+            
+        <a:source a:uuid="0002e388-ee92-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+            
+        <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridLayoutColumns"(
+  columns: {
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Vehicle",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_30251"(rf!maintenance.vehicle)
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Issue Description",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: #"SYSTEM_SYSRULES_recordLink"(
+          label:rf!maintenance.issueDescription,
+          recordType: rp!type,
+          identifier: rp!id,
+          dashboard: ""
+        )
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Scheduled?",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_imageField_v1"(
+        images: #"SYSTEM_SYSRULES_documentImage"(
+          #"SYSTEM_SYSRULES_iconIndicator"(
+            if(rf!maintenance.isScheduled,
+            "FACE_HAPPY",
+            "FACE_SAD"
+            )
+          )
+        ),
+        size: "ICON",
+        isThumbnail: false,
+        style: "STANDARD"
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Supervisor Decision",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: if(
+          rf!maintenance.supervisorDecision,
+          "Approved",
+          "Denied"
+          )
+          
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Total Estimate",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: if(
+          isnull(rf!maintenance.totalEstimate),
+          "",
+          dollar(rf!maintenance.totalEstimate)
+        )
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Actual",
+      width: "DISTRIBUTE",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: if(
+          isnull(rf!maintenance.totalActual),
+          "",
+          dollar(rf!maintenance.totalActual)
+        )
+      
+      )
+    )
+  },
+  pageSize: 50,
+  defaultSort: #"SYSTEM_SYSRULES_sortInfo"(
+    field: "maintenance.supervisorDecision"
+  ),
+  shadeAlternateRows: true
+)</a:listViewTemplateExpr>
+            
+        <a:detailViewCfg>
+                  
+            <a:nameExpr>="Summary"</a:nameExpr>
+                  
+            <a:uiExpr>#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_37662"(rf!maintenance)</a:uiExpr>
+                  
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+                  
+            <a:urlStub>summary</a:urlStub>
+                  
+            <a:headerExpr/>
+                
+        </a:detailViewCfg>
+            
+        <a:isSystem>false</a:isSystem>
+            
+        <a:dataSrcExpr/>
+            
+        <a:facetsListExpr/>
+            
+        <a:titleExpr>rf!maintenance.vehicle.make &amp; " " &amp;
+rf!maintenance.vehicle.model</a:titleExpr>
+            
+        <a:defaultFiltersExpr/>
+            
+        <a:layoutType>GRID</a:layoutType>
+            
+        <a:security>16383</a:security>
+            
+        <a:hideLatestNews>false</a:hideLatestNews>
+            
+        <a:isExportable>true</a:isExportable>
+            
+        <a:listViewSrcExpr/>
+            
+        <a:recordViewSrcExpr/>
+            
+        <a:iconId/>
+            
+        <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+          
+    </recordType>
+      
+    <roleMap>
+            
+        <role name="record_type_administrator">
+                  
+            <users/>
+                  
+            <groups>
+                        
+                <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_125</groupUuid>
+                      
+            </groups>
+                
+        </role>
+            
+        <role name="record_type_viewer">
+                  
+            <users/>
+                  
+            <groups>
+                        
+                <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_74</groupUuid>
+                      
+            </groups>
+                
+        </role>
+          
+    </roleMap>
+      
+    <history>
+            
+        <historyInfo versionUuid="6c5b8928-c927-4882-8bba-7c77f6189c19"/>
+          
+    </history>
+      
+    <migrationVersion>1</migrationVersion>
+    
+</recordTypeHaul><!--updated on 2020-03-03T11:05:32.228-->

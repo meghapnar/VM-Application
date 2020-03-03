@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_35397</versionUuid>
+        
+    <rule>
+                
+        <name>MEG_VM_TestRule</name>
+                
+        <uuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_29440</uuid>
+                
+        <description>Sandbox for practice</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_29411</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>/*"New Ticket " &amp; ri!ticketId &amp; " by " &amp; 2 * 5 &amp; " " &amp; product(
+  4,
+  3
+) &amp; user(ri!userName, "firstName")*/
+
+
+
+/*pi()*/
+/*sum(11,12,13)*/
+/*today()*/
+/*now()*/
+/*today()+14*/
+/*returns only date*/
+/*workday(today(),14,{})*/
+/*returns date and time*/
+/*caladddays(now(),14)*/ 
+/*loggedInUser()*/
+/*len("Hello")*/
+
+ /* if(isnull(ri!amount),
+  0,
+  dollar(ri!amount+10)
+  )*/
+  
+loggedInUser()</definition>
+                
+        <namedTypedValue>
+                        
+            <name>ticketId</name>
+                        
+            <type>
+                                
+                <name>string</name>
+                                
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+                            
+            </type>
+                        
+            <value/>
+                    
+        </namedTypedValue>
+                
+        <namedTypedValue>
+                        
+            <name>userName</name>
+                        
+            <type>
+                                
+                <name>string</name>
+                                
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+                            
+            </type>
+                        
+            <value/>
+                    
+        </namedTypedValue>
+                
+        <namedTypedValue>
+                        
+            <name>firstName</name>
+                        
+            <type>
+                                
+                <name>string</name>
+                                
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+                            
+            </type>
+                        
+            <value/>
+                    
+        </namedTypedValue>
+                
+        <namedTypedValue>
+                        
+            <name>amount</name>
+                        
+            <type>
+                                
+                <name>double</name>
+                                
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <preferredEditor>legacy</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+            
+    </rule>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_35397"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:31.654-->

@@ -1,0 +1,37 @@
+Success (1):
+content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 "MEG_VM_Test_Interface_1"
+
+Referenced precedents that were not exported (5):
+datatype 2714 {urn:com:appian:types}MEG_VM_Vehicle
+user megha megha
+content 1192 _a-0000e37d-16a2-8000-9ba2-011c48011c48_31753
+content 1179 _a-0000e37d-16a2-8000-9ba2-011c48011c48_29219
+content 1189 _a-0000e37d-16a2-8000-9ba2-011c48011c48_31015
+
+Trace:
+2020-03-02 18:34:41.337 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Begin transport.
+2020-03-02 18:34:41.337 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Retrieving object data.
+2020-03-02 18:34:41.348 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Setting uuids of object references.
+2020-03-02 18:34:41.348 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: [Content:id=1297,versionId=-1,name=MEG_VM_Test_Interface_1,type=32,subtype=6,uuid=_a-0000e409-3b60-8000-3895-92ef9092ef90_7231,parent=1189]
+2020-03-02 18:34:41.355 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: Interface.forum
+2020-03-02 18:34:41.356 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: TypedVariable[name=vehicle,it=2714,v=<null>]
+2020-03-02 18:34:41.356 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: Interface.parent
+2020-03-02 18:34:41.359 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@5e3bee15[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[megha],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=143:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2020-03-02 18:34:41.359 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2020-03-02 18:34:41.359 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2020-03-02 18:34:41.359 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: ContentRole[name=administrators,usernames=[megha],inherit=true,allowForAll=false]
+2020-03-02 18:34:41.361 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2020-03-02 18:34:41.361 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2020-03-02 18:34:41.361 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2020-03-02 18:34:41.361 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Completing produce.
+2020-03-02 18:34:41.361 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Exporting binary resources.
+2020-03-02 18:34:41.361 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Serializing object to XML.
+2020-03-02 18:34:41.503 DEBUG content 1297 _a-0000e409-3b60-8000-3895-92ef9092ef90_7231 Object transported.

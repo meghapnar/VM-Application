@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_30333</versionUuid>
+        
+    <rule>
+                
+        <name>MEG_VM_DisplayVehicleName</name>
+                
+        <uuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_30251</uuid>
+                
+        <description>Concatenate Make, Model, VIN all together</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_29411</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>#"SYSTEM_SYSRULES_forEach"(
+  items: ri!vehicle,
+  expression: fv!item.make &amp; " " &amp; fv!item.model &amp; " " &amp; fv!item.vin
+)</definition>
+                
+        <namedTypedValue>
+                        
+            <name>vehicle</name>
+                        
+            <type>
+                                
+                <name>MEG_VM_Vehicle?list</name>
+                                
+                <namespace>urn:com:appian:types</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <preferredEditor>legacy</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+            
+    </rule>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_30333"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:31.702-->

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_38147</versionUuid>
+        
+    <rule>
+                
+        <name>MEG_VM_RequestMaintenance</name>
+                
+        <uuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_35576</uuid>
+                
+        <description>Form to request manitainance</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_31015</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>load(
+  local!category,
+  with(
+#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Request Maintenance",
+  contents: {
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_pickerFieldUsers"(
+              label: "Mechanic",
+              maxSelections: 1,
+              groupFilter: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_35684",
+              value: ri!maintenance.mechanic,
+              saveInto: ri!maintenance.mechanic,
+              required: true
+            ),
+            #"SYSTEM_SYSRULES_dropdownField"(
+              label: "Vehicle Category",
+              placeholderLabel: "---Select a Category",
+              choiceLabels: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_29219",
+              choiceValues: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_29219",
+              value: local!category,
+              saveInto: {local!category,a!save(ri!maintenance.vehicle.id,null)}
+            ),
+            #"SYSTEM_SYSRULES_dropdownField"(
+              label: "Vehicle",
+              placeholderLabel: "---Select a Vehicle---",
+              choiceLabels: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_30251"(index(#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_37826"(local!category),{})),
+              choiceValues: index(#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_37826"(local!category),"id",{}),
+              value: ri!maintenance.vehicle.id,
+              saveInto: ri!maintenance.vehicle.id,
+              required: true,
+              showWhen: local!category&lt;&gt;null,
+            ),
+            #"SYSTEM_SYSRULES_paragraphField"(
+              label: "Description",
+              value: ri!maintenance.issueDescription,
+              saveInto: ri!maintenance.issueDescription,
+              required: true
+            ),
+           #"SYSTEM_SYSRULES_radioButtonField"(
+             label: "Is this Scheduled?",
+             choiceLabels: {"Yes","No"},
+             choiceValues: {true,false},
+             value: ri!maintenance.isScheduled,
+             saveInto: ri!maintenance.isScheduled,
+             required: true,
+             choiceLayout: "COMPACT"
+           )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_boxLayout"(
+              label: "Estimate Information",
+              contents: {
+                #"SYSTEM_SYSRULES_floatingPointField"(
+                  label: "Part Estimate",
+                  value: ri!maintenance.partEstimate,
+                  saveInto: ri!maintenance.partEstimate,
+                  required: true
+                ),
+                #"SYSTEM_SYSRULES_floatingPointField"(
+                  label: "Labor Time Estimate",
+                  value: ri!maintenance.laborEstimate,
+                  saveInto: ri!maintenance.laborEstimate,
+                  required: true
+                ),
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Total Estimate",
+                  labelPosition: "ADJACENT",
+                  value: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_29894"(ri!maintenance.partEstimate,ri!maintenance.laborEstimate),
+                  readOnly: true
+                )
+              },
+              style: "SUCCESS"
+            )
+          }
+        )
+      }
+    )
+  },
+  buttons: {
+    #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Submit Request",
+        submit: true
+      )
+    )
+  }   
+)
+)
+)</definition>
+                
+        <namedTypedValue>
+                        
+            <name>maintenance</name>
+                        
+            <type>
+                                
+                <name>MEG_VM_Maintenance</name>
+                                
+                <namespace>urn:com:appian:types</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <preferredEditor>interface</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+            
+    </rule>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_38147"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:31.915-->
