@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
         
-    <versionUuid>_a-0000e409-3b60-8000-3895-92ef9092ef90_7235</versionUuid>
+    <versionUuid>_a-0000e409-3b60-8000-3895-92ef9092ef90_7279</versionUuid>
         
     <rule>
                 
@@ -33,6 +33,12 @@
         <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
   label: "Add Vehicle",
   contents: {
+    #"SYSTEM_SYSRULES_webContentField_v1"(
+      label: "Appian Web Site",
+      labelPosition: "ABOVE",
+      source: "https://www.appian.com",
+      height: "MEDIUM"
+    ),
     #"SYSTEM_SYSRULES_columnsLayout"(
       columns: {
         #"SYSTEM_SYSRULES_columnLayout"(
@@ -242,7 +248,9 @@
     <history>
                 
         <historyInfo versionUuid="_a-0000e409-3b60-8000-3895-92ef9092ef90_7235"/>
+                
+        <historyInfo versionUuid="_a-0000e409-3b60-8000-3895-92ef9092ef90_7279"/>
             
     </history>
     
-</contentHaul><!--updated on 2020-03-03T12:21:50.910-->
+</contentHaul><!--updated on 2020-03-05T10:58:52.117-->
