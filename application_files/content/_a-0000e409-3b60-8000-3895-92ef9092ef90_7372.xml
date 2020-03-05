@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e409-3b60-8000-3895-92ef9092ef90_7376</versionUuid>
+    <rule>
+        <name>MEG_VM_MileStone_test</name>
+        <uuid>_a-0000e409-3b60-8000-3895-92ef9092ef90_7372</uuid>
+        <description></description>
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_31015</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Vehicle Management",
+  contents: {
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_milestoneField"(
+              label: "Milestone",
+              labelPosition: "COLLAPSED",
+              steps: #"_a-0000e409-3b60-8000-3895-92ef9092ef90_6864",
+              links: {},
+              active: 1,
+              orientation: "HORIZONTAL"
+            )
+          },
+          width: "NARROW"
+        )
+        }
+        )
+        }
+        )</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>megha</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e409-3b60-8000-3895-92ef9092ef90_7376"/>
+    </history>
+</contentHaul>
