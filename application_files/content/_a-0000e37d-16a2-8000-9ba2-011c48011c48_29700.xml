@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_29837</versionUuid>
+        
+    <rule>
+                
+        <name>MEG_VM_FormatUserName</name>
+                
+        <uuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_29700</uuid>
+                
+        <description>Given a login name, returns first and last name</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_29411</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>user(
+  ri!name,
+  "firstName"
+) &amp; " " &amp; user(
+  ri!name,
+  "lastName"
+)</definition>
+                
+        <namedTypedValue>
+                        
+            <name>name</name>
+                        
+            <type>
+                                
+                <name>User</name>
+                                
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <preferredEditor>legacy</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+            
+    </rule>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_29837"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:31.667-->

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<siteHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      
+    <versionUuid>62c18cbd-4e75-468b-984f-a81f46990ac9</versionUuid>
+      
+    <site a:uuid="87d6e954-1623-47a4-a413-e23e26977294" name="MEG VM Fleet Site">
+            
+        <description/>
+            
+        <urlStub>meg-vm-fleet-sit</urlStub>
+            
+        <page>
+                  
+            <staticName>Vehicles</staticName>
+                  
+            <description/>
+                  
+            <urlStub>vehicles</urlStub>
+                  
+            <uiObject a:uuid="9fd45919-f325-46d7-932f-4797888b2adc" xsi:type="a:RecordType">
+                        
+                <a:isSystem>false</a:isSystem>
+                        
+                <a:security>16383</a:security>
+                        
+                <a:hideLatestNews>false</a:hideLatestNews>
+                        
+                <a:isExportable>true</a:isExportable>
+                        
+                <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+                      
+            </uiObject>
+                  
+            <iconId>f072</iconId>
+                  
+            <visibilityExpr>fn!true()</visibilityExpr>
+                  
+            <pageWidth>STANDARD</pageWidth>
+                
+        </page>
+            
+        <page>
+                  
+            <staticName>Request Maintenance</staticName>
+                  
+            <description/>
+                  
+            <urlStub>request-maintenance</urlStub>
+                  
+            <uiObject a:uuid="0002e388-ee92-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+                  
+            <iconId>f007</iconId>
+                  
+            <visibilityExpr>fn!true()</visibilityExpr>
+                  
+            <pageWidth>STANDARD</pageWidth>
+                
+        </page>
+            
+        <page>
+                  
+            <staticName>Maintenance Request History</staticName>
+                  
+            <description/>
+                  
+            <urlStub>maintenance-request-history</urlStub>
+                  
+            <uiObject a:uuid="816a7a04-a116-41de-bf48-5890734d7f0e" xsi:type="a:RecordType">
+                        
+                <a:isSystem>false</a:isSystem>
+                        
+                <a:security>16383</a:security>
+                        
+                <a:hideLatestNews>false</a:hideLatestNews>
+                        
+                <a:isExportable>true</a:isExportable>
+                        
+                <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+                      
+            </uiObject>
+                  
+            <iconId>f008</iconId>
+                  
+            <visibilityExpr>fn!true()</visibilityExpr>
+                  
+            <pageWidth>STANDARD</pageWidth>
+                
+        </page>
+            
+        <page>
+                  
+            <staticName>Fleet Report</staticName>
+                  
+            <description/>
+                  
+            <urlStub>fleet-report</urlStub>
+                  
+            <uiObject a:uuid="125a82bd-4b4a-4d59-8365-00670751b625" xsi:type="a:TempoReport"/>
+                  
+            <iconId>f012</iconId>
+                  
+            <visibilityExpr>fn!true()</visibilityExpr>
+                  
+            <pageWidth>STANDARD</pageWidth>
+                
+        </page>
+            
+        <page>
+                  
+            <staticName>Add Vehicle</staticName>
+                  
+            <description/>
+                  
+            <urlStub>add-vehicle</urlStub>
+                  
+            <uiObject a:uuid="0004e386-432b-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+                  
+            <iconId>f055</iconId>
+                  
+            <visibilityExpr>fn!true()</visibilityExpr>
+                  
+            <pageWidth>STANDARD</pageWidth>
+                
+        </page>
+            
+        <visibility>268435456</visibility>
+            
+        <headerBackgroundColor>#6d9eeb</headerBackgroundColor>
+            
+        <selectedTabBackgroundColor/>
+            
+        <faviconRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_FAVICON" xsi:type="a:CollaborationDocument"/>
+            
+        <faviconHref/>
+            
+        <logoRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_LOGO" xsi:type="a:CollaborationDocument"/>
+            
+        <logoHref/>
+            
+        <headerBackgroundColorExpr/>
+            
+        <selectedTabBackgroundColorExpr/>
+            
+        <accentColor/>
+            
+        <accentColorExpr/>
+            
+        <logoExpr/>
+            
+        <faviconExpr/>
+            
+        <showName>false</showName>
+            
+        <tempoLinkVisibility>EVERYONE</tempoLinkVisibility>
+            
+        <showRecordNews>true</showRecordNews>
+            
+        <isSystem>false</isSystem>
+          
+    </site>
+      
+    <roleMap>
+            
+        <role name="site_administrator">
+                  
+            <users/>
+                  
+            <groups>
+                        
+                <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_125</groupUuid>
+                      
+            </groups>
+                
+        </role>
+            
+        <role name="site_viewer">
+                  
+            <users/>
+                  
+            <groups>
+                        
+                <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_74</groupUuid>
+                      
+            </groups>
+                
+        </role>
+          
+    </roleMap>
+      
+    <history>
+            
+        <historyInfo versionUuid="62c18cbd-4e75-468b-984f-a81f46990ac9"/>
+          
+    </history>
+    
+</siteHaul><!--updated on 2020-03-03T11:05:32.379-->

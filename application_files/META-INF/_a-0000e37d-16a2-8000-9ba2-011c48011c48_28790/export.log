@@ -1,0 +1,34 @@
+Success (1):
+content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 "MEG_VM_MileStone_test"
+
+Referenced precedents that were not exported (3):
+user megha megha
+content 1232 _a-0000e409-3b60-8000-3895-92ef9092ef90_6864
+content 1189 _a-0000e37d-16a2-8000-9ba2-011c48011c48_31015
+
+Trace:
+2020-03-05 16:29:13.119 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Begin transport.
+2020-03-05 16:29:13.119 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Retrieving object data.
+2020-03-05 16:29:13.129 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Setting uuids of object references.
+2020-03-05 16:29:13.13 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: [Content:id=1320,versionId=-1,name=MEG_VM_MileStone_test,type=32,subtype=6,uuid=_a-0000e409-3b60-8000-3895-92ef9092ef90_7372,parent=1189]
+2020-03-05 16:29:13.133 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: Interface.forum
+2020-03-05 16:29:13.133 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: Interface.parent
+2020-03-05 16:29:13.136 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@1d1062c1[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[megha],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=143:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2020-03-05 16:29:13.136 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2020-03-05 16:29:13.136 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2020-03-05 16:29:13.136 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: ContentRole[name=administrators,usernames=[megha],inherit=true,allowForAll=false]
+2020-03-05 16:29:13.137 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2020-03-05 16:29:13.137 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2020-03-05 16:29:13.137 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2020-03-05 16:29:13.137 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Completing produce.
+2020-03-05 16:29:13.137 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Exporting binary resources.
+2020-03-05 16:29:13.137 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Serializing object to XML.
+2020-03-05 16:29:13.141 DEBUG content 1320 _a-0000e409-3b60-8000-3895-92ef9092ef90_7372 Object transported.

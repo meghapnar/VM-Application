@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_126</versionUuid>
+        
+    <group>
+                
+        <name>MEG VM Administrators</name>
+                
+        <securityMap>SECURITYMAP_TEAM</securityMap>
+                
+        <uuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_125</uuid>
+                
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+                
+        <parentUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_74</parentUuid>
+                
+        <description>Admins of the VM app.</description>
+                
+        <delegatedCreation>false</delegatedCreation>
+                
+        <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
+                
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+                
+        <attributes/>
+            
+    </group>
+        
+    <members>
+                
+        <users/>
+                
+        <groups>
+                        
+            <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_148</groupUuid>
+                    
+        </groups>
+            
+    </members>
+        
+    <admins>
+                
+        <users>
+                        
+            <userUuid>megh.nara</userUuid>
+                    
+        </users>
+                
+        <groups/>
+            
+    </admins>
+        
+    <ruleSet/>
+        
+    <history>
+                
+        <historyInfo versionUuid="_e-0000e37d-16a2-8000-9aee-01075c01075c_126"/>
+            
+    </history>
+    
+</groupHaul><!--updated on 2020-03-03T11:05:31.467-->

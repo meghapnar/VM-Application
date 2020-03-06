@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_75</versionUuid>
+        
+    <group>
+                
+        <name>MEG VM All Users</name>
+                
+        <securityMap>SECURITYMAP_TEAM</securityMap>
+                
+        <uuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_74</uuid>
+                
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+                
+        <description>Everyone who uses the VM app.</description>
+                
+        <delegatedCreation>false</delegatedCreation>
+                
+        <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
+                
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+                
+        <attributes/>
+            
+    </group>
+        
+    <members>
+                
+        <users/>
+                
+        <groups>
+                        
+            <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_219</groupUuid>
+                        
+            <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_125</groupUuid>
+                        
+            <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_235</groupUuid>
+                        
+            <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_263</groupUuid>
+                    
+        </groups>
+            
+    </members>
+        
+    <admins>
+                
+        <users>
+                        
+            <userUuid>megh.nara</userUuid>
+                    
+        </users>
+                
+        <groups>
+                        
+            <groupUuid>_e-0000e37d-16a2-8000-9aee-01075c01075c_125</groupUuid>
+                    
+        </groups>
+            
+    </admins>
+        
+    <ruleSet/>
+        
+    <history>
+                
+        <historyInfo versionUuid="_e-0000e37d-16a2-8000-9aee-01075c01075c_75"/>
+            
+    </history>
+    
+</groupHaul><!--updated on 2020-03-03T11:05:31.450-->

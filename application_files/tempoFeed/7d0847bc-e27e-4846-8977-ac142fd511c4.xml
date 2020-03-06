@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><tempoFeedHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>c03ffd46-bdb6-4ac1-814c-5bb2be1b9db8</versionUuid>
+        
+    <tempoFeed>
+                
+        <uuid>7d0847bc-e27e-4846-8977-ac142fd511c4</uuid>
+                
+        <name>MEG VM Vehicle Management Feed</name>
+                
+        <description/>
+                
+        <showInCatalog>true</showInCatalog>
+                
+        <systemFeed>false</systemFeed>
+            
+    </tempoFeed>
+        
+    <roleMap>
+                
+        <role name="administrator">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="c03ffd46-bdb6-4ac1-814c-5bb2be1b9db8"/>
+            
+    </history>
+    
+</tempoFeedHaul><!--updated on 2020-03-03T11:05:32.101-->

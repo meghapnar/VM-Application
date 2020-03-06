@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_38434</versionUuid>
+        
+    <rule>
+                
+        <name>MEG_VM_MaintenanceByCategory</name>
+                
+        <uuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_38308</uuid>
+                
+        <description>Depicts maintenance request by vehicle category</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_31015</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>load(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
+    startIndex: 1,
+    batchSize: -1
+  ),
+  with(
+    local!datasubset: queryrecord(
+      recordType: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_38363",
+      query: #"SYSTEM_SYSRULES_query"(
+        aggregation: #"SYSTEM_SYSRULES_queryAggregation"(
+          aggregationColumns: {
+            #"SYSTEM_SYSRULES_queryAggregationColumn"(
+              field: "maintenance.vehicle.category", alias: "category",isGrouping: true
+            ),
+            #"SYSTEM_SYSRULES_queryAggregationColumn"(
+              field: "pp.id", alias: "id", aggregationFunction: "COUNT"
+            )
+          }
+        ),
+        pagingInfo: local!pagingInfo
+      )
+    ),
+    #"SYSTEM_SYSRULES_pieChartField"(
+      showDataLabels: true,
+      showAsPercentage: true,
+      series: {
+        #"SYSTEM_SYSRULES_forEach"(
+          items: local!datasubset,
+          expression: #"SYSTEM_SYSRULES_chartSeries"(
+            label: index(fv!item,"category",null),
+            data: index(fv!item,"id",null)
+          )
+        )
+      }
+    )
+  )
+)</definition>
+                
+        <preferredEditor>interface</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+            
+    </rule>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_38434"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:32.264-->

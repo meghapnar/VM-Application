@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_30943</versionUuid>
+        
+    <decision>
+                
+        <name>MEG_VM_CalcNextMtnDate</name>
+                
+        <uuid>3698c67b-177e-4110-8b9c-cb0901714ab3</uuid>
+                
+        <description>Given a vehicles year, category and mileage, returns how many days until next maintenance due date.</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_30440</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>fn!override_exception_appian_internal(fn!with(local!decisiondefinition: a!decisiondesigner_cache(uuid: "3698c67b-177e-4110-8b9c-cb0901714ab3",versionKey: "937d9fb2-3e3b-439d-9355-0731da025549",value: #"SYSTEM_SYSRULES_dd_dd"('hitPolicy': #"SYSTEM_SYSRULES_dd_dhp"("FIRST"), 'inputs': {#"SYSTEM_SYSRULES_dd_di"('name': "year", 'type': 'type!{http://www.appian.com/ae/types/2009}Integer', 'id': 1, 'restrictionType': #"SYSTEM_SYSRULES_dd_dirt"("NONE")), #"SYSTEM_SYSRULES_dd_di"('name': "category", 'type': 'type!{http://www.appian.com/ae/types/2009}Text', 'id': 2, 'restrictionType': #"SYSTEM_SYSRULES_dd_dirt"("LOOKUP"), 'restriction': #"SYSTEM_SYSRULES_dd_dirl"('allowedLabels': {}, 'allowedValues': {"Sedan", "SUV", "Pickup", "Compact", "Convertible", "Clunker", "Van"})), #"SYSTEM_SYSRULES_dd_di"('name': "mileage", 'type': 'type!{http://www.appian.com/ae/types/2009}Integer', 'id': 3, 'restrictionType': #"SYSTEM_SYSRULES_dd_dirt"("NONE"))}, 'outputs': {#"SYSTEM_SYSRULES_dd_do"('id': 1, 'name': "nextMtnDate", 'type': 'type!{http://www.appian.com/ae/types/2009}Integer', 'restrictionType': #"SYSTEM_SYSRULES_dd_dort"("NONE"), 'returnListType': false)}, 'rules': {#"SYSTEM_SYSRULES_dd_dr"('id': 1, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 1, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("BETWEEN_INCLUSIVE"), 'value1': 1950, 'value2': 1959)), #"SYSTEM_SYSRULES_dd_dri"('id': 2, 'decisionInputId': 2, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("ANY"))), #"SYSTEM_SYSRULES_dd_dri"('id': 9, 'decisionInputId': 3, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("GREATER_THAN"), 'value1': 4000))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 1, 'decisionOutputId': 1, 'value': 30)}), #"SYSTEM_SYSRULES_dd_dr"('id': 2, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 3, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("BETWEEN_INCLUSIVE"), 'value1': 1960, 'value2': 1969)), #"SYSTEM_SYSRULES_dd_dri"('id': 4, 'decisionInputId': 2, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("IN"), 'value1': {"Sedan"})), #"SYSTEM_SYSRULES_dd_dri"('id': 10, 'decisionInputId': 3, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("ANY")))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 2, 'decisionOutputId': 1, 'value': 60)}), #"SYSTEM_SYSRULES_dd_dr"('id': 3, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 5, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("BETWEEN_INCLUSIVE"), 'value1': 1970, 'value2': 1979)), #"SYSTEM_SYSRULES_dd_dri"('id': 6, 'decisionInputId': 2, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("IN"), 'value1': {"Compact"})), #"SYSTEM_SYSRULES_dd_dri"('id': 11, 'decisionInputId': 3, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("EQUALS"), 'value1': 7000))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 3, 'decisionOutputId': 1, 'value': 45)}), #"SYSTEM_SYSRULES_dd_dr"('id': 4, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 7, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("BETWEEN_EXCLUSIVE"), 'value1': 1979, 'value2': 1991)), #"SYSTEM_SYSRULES_dd_dri"('id': 8, 'decisionInputId': 2, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("IN"), 'value1': {"SUV"})), #"SYSTEM_SYSRULES_dd_dri"('id': 12, 'decisionInputId': 3, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("GREATER_THAN_EQUALS"), 'value1': 8000))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 4, 'decisionOutputId': 1, 'value': 70)}), #"SYSTEM_SYSRULES_dd_dr"('id': 5, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 13, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("BETWEEN_EXCLUSIVE"), 'value1': 1991, 'value2': 2000)), #"SYSTEM_SYSRULES_dd_dri"('id': 14, 'decisionInputId': 2, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("IN"), 'value1': {"Convertible"})), #"SYSTEM_SYSRULES_dd_dri"('id': 15, 'decisionInputId': 3, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("GREATER_THAN"), 'value1': 10000))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 5, 'decisionOutputId': 1, 'value': 90)}), #"SYSTEM_SYSRULES_dd_dr"('id': 6, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 16, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("GREATER_THAN"), 'value1': 2000)), #"SYSTEM_SYSRULES_dd_dri"('id': 17, 'decisionInputId': 2, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("ANY"))), #"SYSTEM_SYSRULES_dd_dri"('id': 18, 'decisionInputId': 3, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("GREATER_THAN_EQUALS"), 'value1': 100000))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 6, 'decisionOutputId': 1, 'value': 60)})}, 'defaultOutputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 1, 'decisionOutputId': 1, 'value': 280)})),#"SYSTEM_SYSRULES_dd_exr"(decisionDefinition:local!decisiondefinition,executionInputs:{#"SYSTEM_SYSRULES_dd_dei"(decisionInputId:1,value:'ri!year'),#"SYSTEM_SYSRULES_dd_dei"(decisionInputId:2,value:'ri!category'),#"SYSTEM_SYSRULES_dd_dei"(decisionInputId:3,value:'ri!mileage')})))</definition>
+                
+        <namedTypedValue>
+                        
+            <name>year</name>
+                        
+            <type>
+                                
+                <name>int</name>
+                                
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <namedTypedValue>
+                        
+            <name>category</name>
+                        
+            <type>
+                                
+                <name>string</name>
+                                
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+                            
+            </type>
+                        
+            <value/>
+                    
+        </namedTypedValue>
+                
+        <namedTypedValue>
+                        
+            <name>mileage</name>
+                        
+            <type>
+                                
+                <name>int</name>
+                                
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <preferredEditor>legacy</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+                
+        <inputMetadataList>
+                        
+            <inputMetadata>
+                                
+                <inputId>2</inputId>
+                                
+                <nameRef>category</nameRef>
+                                
+                <allowedLabelsExpr/>
+                                
+                <allowedValuesExpr>#"_a-0000e37d-16a2-8000-9ba2-011c48011c48_29219"</allowedValuesExpr>
+                            
+            </inputMetadata>
+                    
+        </inputMetadataList>
+                
+        <outputMetadataList>
+                        
+            <outputMetadata>
+                                
+                <outputId>1</outputId>
+                                
+                <nameRef>nextMtnDate</nameRef>
+                                
+                <typeName>{http://www.appian.com/ae/types/2009}Integer</typeName>
+                            
+            </outputMetadata>
+                    
+        </outputMetadataList>
+                
+        <hitPolicy>FIRST</hitPolicy>
+            
+    </decision>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_30943"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:31.723-->

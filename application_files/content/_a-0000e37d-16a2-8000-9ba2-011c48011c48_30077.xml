@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_30181</versionUuid>
+        
+    <rule>
+                
+        <name>MEG_VM_VehicleStatusIcon</name>
+                
+        <uuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_30077</uuid>
+                
+        <description>Given a vehicle status, returns the appropriate icon</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_29411</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>#"SYSTEM_SYSRULES_iconIndicator"(
+  if(ri!status,
+  "FACE_HAPPY",
+  "FACE_SAD") 
+)</definition>
+                
+        <namedTypedValue>
+                        
+            <name>status</name>
+                        
+            <type>
+                                
+                <name>boolean</name>
+                                
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <preferredEditor>legacy</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+            
+    </rule>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_30181"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:31.691-->

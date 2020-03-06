@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_37335</versionUuid>
+        
+    <rule>
+                
+        <name>MEG_VM_SupervisorReview</name>
+                
+        <uuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_36538</uuid>
+                
+        <description>Form used by supervisor to approve or reject unscheduled maintenance request</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_31015</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Review maintenance request for the " &amp; ri!maintenance.vehicle.make &amp; ri!maintenance.vehicle.model,
+  contents: {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "The Vehicle in Question",
+      contents: {
+        #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_36435"(ri!maintenance.vehicle)
+      }
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "Maintenance Request Info",
+      contents: {
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_pickerFieldUsers"(
+                  label: "Mechanic",
+                  labelPosition: "ADJACENT",
+                  value: ri!maintenance.mechanic,
+                  saveInto: {},
+                  readonly: true,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_paragraphField"(
+                  label: "Issue Description",
+                  labelPosition: "ADJACENT",
+                  value: ri!maintenance.issueDescription,
+                  saveInto: {},
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  height: "MEDIUM",
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_boxLayout"(
+                  label: "Estimates",
+                  contents: {
+                    #"SYSTEM_SYSRULES_floatingPointField"(
+                      label: "Part Estimate",
+                      labelPosition: "ADJACENT",
+                      value: ri!maintenance.partEstimate,
+                      saveInto: {},
+                      refreshAfter: "UNFOCUS",
+                      readonly: true,
+                      validations: {}
+                    ),
+                    #"SYSTEM_SYSRULES_floatingPointField"(
+                      label: "Labor Estimate",
+                      labelPosition: "ADJACENT",
+                      value: ri!maintenance.laborEstimate,
+                      saveInto: {},
+                      refreshAfter: "UNFOCUS",
+                      readonly: true,
+                      validations: {}
+                    ),
+                    #"SYSTEM_SYSRULES_textField"(
+                      label: "Total Estimate",
+                      labelPosition: "ADJACENT",
+                      value: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_29894"(ri!maintenance.partEstimate,ri!maintenance.laborEstimate),
+                      saveInto: {},
+                      refreshAfter: "UNFOCUS",
+                      required: true,
+                      readonly: true,
+                      validations: {}
+                    )
+                  },
+                  style: "#d0e0e3",
+                  marginBelow: "STANDARD"
+                )
+              }
+            )
+          }
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "Supervisor Action",
+      contents: {
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_radioButtonField"(
+                  label: "Decision",
+                  labelPosition: "ABOVE",
+                  choiceLabels: {"Approve", "Deny"},
+                  choiceValues: {true, false},
+                  value: ri!maintenance.supervisorDecision,
+                  saveInto: ri!maintenance.supervisorDecision,
+                  required: true,
+                  choiceLayout: "STACKED",
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_paragraphField"(
+                  label: "Comments",
+                  labelPosition: "ABOVE",
+                  value: ri!maintenance.supervisorComments,
+                  saveInto: ri!maintenance.supervisorComments,
+                  refreshAfter: "UNFOCUS",
+                  required: ri!maintenance.supervisorDecision&lt;&gt;true,
+                  height: "SHORT",
+                  validations: {}
+                )
+              }
+            )
+          }
+        )
+      }
+    )
+  },
+  buttons: {
+    #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Render Judgement",
+          submit: true,
+          style: "PRIMARY"
+        )
+      }
+    )
+  }
+)</definition>
+                
+        <namedTypedValue>
+                        
+            <name>maintenance</name>
+                        
+            <type>
+                                
+                <name>MEG_VM_Maintenance</name>
+                                
+                <namespace>urn:com:appian:types</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <preferredEditor>interface</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+            
+    </rule>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_37335"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:31.949-->

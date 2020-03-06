@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_32032</versionUuid>
+        
+    <rule>
+                
+        <name>MEG_VM_AddVehicle</name>
+                
+        <uuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_31019</uuid>
+                
+        <description>Form used by Registrar to add new vehicle to the fleet</description>
+                
+        <parentUuid>_a-0000e37d-16a2-8000-9ba2-011c48011c48_31015</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Add Vehicle",
+  contents: {
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Make",
+              labelPosition: "ABOVE",
+              instructions: "Enter the make of  vehicle",
+              placeholder: "ie Ford",
+              value: ri!vehicle.make,
+              saveInto: ri!vehicle.make,
+              refreshAfter: "UNFOCUS",
+              required: false,
+              requiredmessage: "",
+              readonly: false,
+              disabled: false,
+              masked: false,
+              validations: {}
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Model",
+              labelPosition: "ABOVE",
+              instructions: "Enter the model of vehicle",
+              value: ri!vehicle.model,
+              saveInto: ri!vehicle.model,
+              refreshAfter: "UNFOCUS",
+              validations: {}
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "VIN",
+              labelPosition: "ABOVE",
+              instructions: len(ri!vehicle.vin)&amp;" /17",
+              value: ri!vehicle.vin,
+              saveInto: ri!vehicle.vin,
+              refreshAfter: "KEYPRESS",
+              validations: if(
+                len(ri!vehicle.vin)&lt;&gt;17,
+                "Please enter a valid 17 digit VIN number",
+                {}
+              )
+            ),
+            #"SYSTEM_SYSRULES_paragraphField"(
+              label: "Description",
+              labelPosition: "ABOVE",
+              value: ri!vehicle.description,
+              saveInto: ri!vehicle.description,
+              refreshAfter: "UNFOCUS",
+              height: "MEDIUM",
+              validations: {}
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_dropdownField"(
+              label: "Category",
+              labelPosition: "ABOVE",
+              placeholderLabel: "--- Select a Category ---",
+              choiceLabels: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_29219",
+              choiceValues: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_29219",
+              value: ri!vehicle.category,
+              saveInto: ri!vehicle.category,
+              required: true,
+              validations: {}
+            ),
+            #"SYSTEM_SYSRULES_integerField"(
+              label: "Mileage",
+              labelPosition: "ABOVE",
+              value: ri!vehicle.mileage,
+              saveInto: ri!vehicle.mileage,
+              refreshAfter: "UNFOCUS",
+              required: true,
+              validations: {}
+            ),
+            #"SYSTEM_SYSRULES_integerField"(
+              label: "Year",
+              labelPosition: "ABOVE",
+              value: ri!vehicle.year,
+              saveInto: ri!vehicle.year,
+              refreshAfter: "UNFOCUS",
+              required: true,
+              validations: {}
+            ),
+            #"SYSTEM_SYSRULES_radioButtonField"(
+              label: "Status",
+              labelPosition: "ABOVE",
+              choiceLabels: {"Active", "Inactive"},
+              choiceValues: {true(), false()},
+              value: ri!vehicle.status,
+              saveInto: ri!vehicle.status,
+              required: true,
+              choiceLayout: "STACKED",
+              validations: {}
+            ),
+            #"SYSTEM_SYSRULES_dateField"(
+              label: "Next Maintenance Due on",
+              labelPosition: "ABOVE",
+              value: ri!vehicle.nextSchedule,
+              saveInto: ri!vehicle.nextSchedule,
+              required: true,
+              validations: if(
+                ri!vehicle.nextSchedule&lt;today(),
+                "Please choose a date in the future",
+                {}
+              )
+            ),
+            #"SYSTEM_SYSRULES_fileUploadField_v1"(
+              label: "Image",
+              labelPosition: "ABOVE",
+              target: #"_a-0000e37d-16a2-8000-9ba2-011c48011c48_31753",
+              saveInto: ri!vehicle.imageId,
+              validations: {}
+            )
+          }
+        )
+      }
+    )
+  },
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Submit",
+        submit: true,
+        style: "PRIMARY"
+      )
+    },
+    secondaryButtons: {}
+  )
+)</definition>
+                
+        <namedTypedValue>
+                        
+            <name>vehicle</name>
+                        
+            <type>
+                                
+                <name>MEG_VM_Vehicle</name>
+                                
+                <namespace>urn:com:appian:types</namespace>
+                            
+            </type>
+                    
+        </namedTypedValue>
+                
+        <preferredEditor>interface</preferredEditor>
+                
+        <offlineEnabled>false</offlineEnabled>
+            
+    </rule>
+        
+    <roleMap public="true">
+                
+        <role allowForAll="false" inherit="true" name="readers">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="authors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="true" name="administrators">
+                        
+            <users>
+                                
+                <userUuid>megh.nara</userUuid>
+                            
+            </users>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyReaders">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+                
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+                        
+            <users/>
+                        
+            <groups/>
+                    
+        </role>
+            
+    </roleMap>
+        
+    <history>
+                
+        <historyInfo versionUuid="_a-0000e37d-16a2-8000-9ba2-011c48011c48_32032"/>
+            
+    </history>
+    
+</contentHaul><!--updated on 2020-03-03T11:05:31.785-->
